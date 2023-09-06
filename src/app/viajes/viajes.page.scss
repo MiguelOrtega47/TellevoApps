@@ -1,0 +1,51 @@
+ion-toolbar{
+    background-color: var(--ion-color-micolor);
+  }
+
+  ion-card{
+    border-radius: 30px;
+    border: 5px solid
+  }
+  ion-grid{
+    display: flex;
+  }
+//Carta que gira 
+  .flip-card {
+    margin: 15px;
+    padding: 0;
+    width: 160px;
+    height: 350px;
+  
+    .flip-card-inner {
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+  
+      &:hover {
+        transform: rotateY(180deg);
+      }
+    }
+  
+    .flip-card-front,
+    .flip-card-back {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #ccc;
+      background-color: #fff;
+    }
+  
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+  }
+
+.conteiner{
+  display: flex;
+}

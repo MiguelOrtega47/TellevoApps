@@ -1,0 +1,22 @@
+ion-menu-button {
+  color: var(--ion-color-primary);
+}
+
+ion-toolbar{
+  background-color: var(--ion-color-micolor);
+}
+.arriba{
+  display: flex;
+  justify-content: space-between;
+}
+
+.titulo{
+  display: flex;
+  justify-content: center;
+}
+
+.carta{
+  border: 5px solid;
+  height: 50vh;
+  
+}
