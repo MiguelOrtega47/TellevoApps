@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Share } from '@capacitor/share';
+
+
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
@@ -16,4 +19,12 @@ export class AppComponent {
   ];
   
   constructor() {}
+
+  compartirApp(){
+    Share.share({
+      title: 'Compartir myApp',
+      url: 'https://bilbaolabs.cl/',
+      dialogTitle: 'Disfruta y comparte',
+    });
+}
 }
