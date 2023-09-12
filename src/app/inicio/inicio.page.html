@@ -16,7 +16,7 @@
     </ion-item>
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/folder']" type="submit" color="danger" expand="block">Ingresar</ion-button>
+        <ion-button type="submit" color="danger" expand="block" (click)="ingresar()">Ingresar</ion-button>
         <a [routerLink]="['/restablecer-contrasena']" class="small-text">Olvidaste tu contraseña?</a>
         <ion-button [routerLink]="['/registro']" expand="block" color="danger">Registrarse</ion-button>
       </ion-col>
