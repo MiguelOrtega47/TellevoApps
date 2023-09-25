@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Share } from '@capacitor/share';
+import { MenuController } from '@ionic/angular';
 
 
 @Component({
@@ -18,7 +20,7 @@ export class AppComponent {
     { title: 'registro-ruta', url: '/registro-ruta', icon: 'nutrition' },
   ];
   
-  constructor() {}
+  constructor(public router: Router, private menu: MenuController) {}
 
   compartirApp(){
     Share.share({
@@ -26,5 +28,14 @@ export class AppComponent {
       url: 'https://bilbaolabs.cl/',
       dialogTitle: 'Disfruta y comparte',
     });
+}
+cerrarSesion(){
+  localStorage.removeItem('autenticado');
+  this.router.navigate(["/inicio"]);
+  this.menu.close();
+}
+abrirMapa() {
+  this.router.navigate(["/mapa"]);
+  this.menu.close();
 }
 }

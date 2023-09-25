@@ -17,6 +17,13 @@
     <ion-button [routerLink]="['/viajes']" > Mas viajes </ion-button>
     <ion-button [routerLink]="['/registro-ruta']" > TeLLevo <ion-icon name="speedometer" ></ion-icon> </ion-button>
   </div>
+
+  <ion-item (click)="abrirMapa()">
+    <ion-icon slot="start" ios="map" md="map"></ion-icon>
+    <ion-label>Mapa</ion-label>
+  </ion-item>
+  <div id="map"></div>
+
   <h3>Noticias</h3>
     <ion-card class="carta">
       <img  style="height: 20vh; width: 40vh;" src="https://www.duoc.cl/wp-content/uploads/2023/09/MicrosoftTeams-image-23-1024x768.jpg" />

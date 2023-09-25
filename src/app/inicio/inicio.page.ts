@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
@@ -10,48 +10,46 @@ import { AlertController } from '@ionic/angular';
 })
 export class InicioPage implements OnInit {
   
-  /*
   formularioLogin: FormGroup;
-  usuario = 'zenpi';
-  contrasena = '1234'
-  */
 
-  nombreUsuario = localStorage.getItem('usuario')
-  contrasenaUsuario = localStorage.getItem('contrasena')
-
-  constructor(private router: Router, private alertController: AlertController) { }
-
+  constructor(public fb: FormBuilder, private alertController: AlertController, private router: Router) {
+    this.formularioLogin = this.fb.group({
+      'nombre': new FormControl("", Validators.required),
+      'contrasena': new FormControl("", Validators.required)
+    })
+  }
 
   ngOnInit() {
   }
 
-  async ingresar(){
-    localStorage.setItem('usuario','zenpi');
-    localStorage.setItem('contrasena','1234');
+  async ingresar() {
+    var f = this.formularioLogin.value;
 
-    /*
-    if(this.usuario == usuario && this.contrasena == constrasena){
+    var nombreUsuario = localStorage.getItem('nombreUsuario');
+    var contrasenaUsuario = localStorage.getItem('contrasenaUsuario');
+
+    if (this.formularioLogin.invalid) {
       const alert = await this.alertController.create({
         header: 'Mensaje',
-        message: 'Hola',
+        message: 'Debes ingresar todos los datos',
         buttons: ['OK']
       });
 
       await alert.present();
-      return;      
-    }else{
-      this.router.navigate(["/tellevo"]);
-    }
-    */
-   
-    const alert = await this.alertController.create({
-      header: 'Mensaje',
-      message: 'Hola',
-      buttons: ['OK']
-    });
+      return;
+    } else if (nombreUsuario == f.nombre && contrasenaUsuario == f.contrasena) {
+      localStorage.setItem('autenticado','true');
+      this.router.navigate(["/tellevo"]);      
+    } else {
+      const alert = await this.alertController.create({
+        header: 'Mensaje',
+        message: 'Datos incorrectos',
+        buttons: ['OK']
+      });
 
-    await alert.present();
-    return;
+      await alert.present();
+      return;
+    }
   }
 
 }
