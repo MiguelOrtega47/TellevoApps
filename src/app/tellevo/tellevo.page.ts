@@ -9,11 +9,13 @@ import { MenuController } from '@ionic/angular';
 })
 export class TellevoPage implements OnInit {
 
-  nombreUsuario = localStorage.getItem('usuario')
+  nombreUsuario = localStorage.getItem('nombreUsuario');
 
   constructor(public router: Router, private menu: MenuController) { }
 
+  
   ngOnInit() {
+    console.log('Nombre de usuario: ', this.nombreUsuario);
   }
 
   abrirMapa() {
