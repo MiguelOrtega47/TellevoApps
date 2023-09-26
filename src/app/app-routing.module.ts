@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AutenticadoGuard } from './guard/autenticado.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'carga',
+    redirectTo: 'tellevo',
     pathMatch: 'full'
   },
   {
@@ -17,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'viajes',
-    loadChildren: () => import('./viajes/viajes.module').then( m => m.ViajesPageModule)
+    loadChildren: () => import('./viajes/viajes.module').then( m => m.ViajesPageModule),
+    canActivate: [AutenticadoGuard]
   },
   {
     path: 'inicio',
@@ -29,21 +31,18 @@ const routes: Routes = [
   },
   {
     path: 'registro-ruta',
-    loadChildren: () => import('./registro-ruta/registro-ruta.module').then( m => m.RegistroRutaPageModule)
+    loadChildren: () => import('./registro-ruta/registro-ruta.module').then( m => m.RegistroRutaPageModule),
+    canActivate: [AutenticadoGuard]
   },
   {
     path: 'carga',
     loadChildren: () => import('./carga/carga.module').then( m => m.CargaPageModule)
-  },  {
-    path: 'tellevo',
-    loadChildren: () => import('./tellevo/tellevo.module').then( m => m.TellevoPageModule)
   },
   {
-    path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
-  },
-
-  
+    path: 'tellevo',
+    loadChildren: () => import('./tellevo/tellevo.module').then( m => m.TellevoPageModule),
+    canActivate: [AutenticadoGuard]
+  }  
 ];
 
 @NgModule({

@@ -11,7 +11,7 @@ export class CargaPage implements OnInit {
 
   ngOnInit() {
     setTimeout(() => {
-      this.router.navigate(['inicio']); // Reemplaza 'home' con el nombre de tu página principal
+      this.router.navigate(['tellevo']); // Reemplaza 'home' con el nombre de tu página principal
     }, 5000); // 5000 milisegundos = 5 segundos
   }
 }
