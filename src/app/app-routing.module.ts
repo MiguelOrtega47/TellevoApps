@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'tellevo',
     loadChildren: () => import('./tellevo/tellevo.module').then( m => m.TellevoPageModule)
   },
+  {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  },
 
   
 ];
