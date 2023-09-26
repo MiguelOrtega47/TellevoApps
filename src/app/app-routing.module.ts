@@ -5,7 +5,7 @@ import { AutenticadoGuard } from './guard/autenticado.guard';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tellevo',
+    redirectTo: 'carga',
     pathMatch: 'full'
   },
   {
@@ -42,7 +42,11 @@ const routes: Routes = [
     path: 'tellevo',
     loadChildren: () => import('./tellevo/tellevo.module').then( m => m.TellevoPageModule),
     canActivate: [AutenticadoGuard]
-  }  
+  },   {
+    path: 'mapa',
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+  }
+ 
 ];
 
 @NgModule({
