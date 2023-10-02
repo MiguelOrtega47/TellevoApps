@@ -1,15 +1,14 @@
-/* Estilo para el encabezado de la página */
 ion-header {
     ion-toolbar {
-      --background: #007bff; /* Color de fondo del encabezado */
-      --color: #fff; /* Color del texto del encabezado */
+      --background: #007bff;
+      --color: #fff;
     }
     ion-title {
       font-size: 24px;
     }
   }
   
-  /* Estilo para el contenido de la página */
+
   ion-content {
     ion-list {
       ion-item {
@@ -17,27 +16,18 @@ ion-header {
           font-weight: bold;
         }
       }
-  
-      ion-input {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px;
-      }
     }
   
     ion-button {
-      --background: #007bff; /* Color de fondo del botón */
-      --color: #fff; /* Color del texto del botón */
+      --background: #007bff; 
+      --color: #fff; 
       margin-top: 10px;
     }
   
     ion-item {
       input[type="file"] {
-        /* Estilo para el campo de carga de archivos */
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        padding: 10px;
+        margin-bottom: 5px;
+        padding: 5px;
         background-color: #f9f9f9;
       }
     }

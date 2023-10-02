@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">tebi-app</string>
+    <string name="title_activity_main">tebi-app</string>
+    <string name="package_name">com.tebi.app</string>
+    <string name="custom_url_scheme">com.tebi.app</string>
+</resources>
