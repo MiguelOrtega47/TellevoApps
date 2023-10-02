@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Platform } from '@ionic/angular';
 
 declare var google: any;
 
@@ -11,7 +12,7 @@ export class MapaPage implements OnInit {
 
   map: any;
 
-  constructor() { }
+  constructor(private platform: Platform ) { }
 
   ngOnInit() {
     this.initMap();
@@ -31,5 +32,10 @@ export class MapaPage implements OnInit {
     });
     
     marker.setMap(map);
+  }
+  ionViewDidEnter(){
+    this.platform.ready().then(()=>{
+      this.initMap()
+    })
   }
 }
