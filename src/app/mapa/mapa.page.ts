@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
+import { ElementRef, ViewChild, NgZone } from '@angular/core';
+  declare var google: any;
 
 declare var google: any;
 
@@ -10,32 +12,74 @@ declare var google: any;
 })
 export class MapaPage implements OnInit {
 
-  map: any;
-
-  constructor(private platform: Platform ) { }
+  constructor(private platform: Platform, private zone: NgZone) { }
 
   ngOnInit() {
-    this.initMap();
+  }
+
+  @ViewChild('map') mapElement: ElementRef | undefined;
+  public map: any;
+  public start: any = "Duoc UC: Sede Melipilla - Serrano, Melipilla, Chile";
+  public end: any = "Pomaire";
+  public latitude: any;
+  public longitude: any;
+  public directionsService: any;
+  public directionsDisplay: any;
+  public autocompleteItems:any;
+
+  ionViewDidEnter() {
+    this.platform.ready().then(() => {
+      this.initMap()
+    })
   }
 
   initMap() {
-    var myLatlng = new google.maps.LatLng(-33.68142157785643,-71.22594634660035);
-    
-    var mapOptions = {
-      zoom: 16,
-      center: myLatlng
-    }
-    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    
-    var marker = new google.maps.Marker({
-        position: myLatlng
-    });
-    
-    marker.setMap(map);
+    this.directionsService = new google.maps.DirectionsService;
+    this.directionsDisplay = new google.maps.DirectionsRenderer;
+    let latLng = new google.maps.LatLng(this.latitude, this.longitude);
+    let mapOptions = {
+      center: latLng,
+      zoom: 5,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.mapElement!.nativeElement, mapOptions);
+    this.directionsDisplay.setMap(this.map);
+    this.calculateAndDisplayRoute();
   }
-  ionViewDidEnter(){
-    this.platform.ready().then(()=>{
-      this.initMap()
-    })
+
+  calculateAndDisplayRoute() {
+    this.directionsService.route({
+      origin: this.start,
+      destination: this.end,
+      travelMode: 'DRIVING'
+    }, (response: any, status: string) => {
+      if (status === 'OK') {
+        this.directionsDisplay.setDirections(response);
+      } else {
+        window.alert('Directions request failed due to ' + status);
+      }
+    });
+  }
+
+  updateSearchResults() {
+    let GoogleAutocomplete = new google.maps.places.AutocompleteService();
+    if (this.end == '') {
+      this.autocompleteItems = [];
+      return;
+    }
+    GoogleAutocomplete!.getPlacePredictions({ input: this.end },
+      (predictions: any, status: any) => {
+        this.autocompleteItems = [];
+        this.zone.run(() => {
+          predictions.forEach((prediction: any) => {
+            this.autocompleteItems!.push(prediction);
+          });
+        });
+      });
+  }
+  selectSearchResult(item: any) {
+    this.end = item.description
+    this.autocompleteItems = []
+    this.initMap()
   }
 }

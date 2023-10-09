@@ -1,9 +1,3 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>mapa</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -11,5 +5,11 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="map"></div>
+  <div #map id="map"></div>
+	<input type="text"  [(ngModel)]="end" (input)="updateSearchResults()" placeholder="Destino">
+	<ion-list *ngIf="autocompleteItems" [hidden]="autocompleteItems.length == 0">
+      		<ion-item *ngFor="let item of autocompleteItems" tappable (click)="selectSearchResult(item)">
+        		{{ item.description }}
+      		</ion-item>
+   	 </ion-list>
 </ion-content>
