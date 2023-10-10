@@ -13,14 +13,16 @@
 
   <div class="buscar">
     <h1 class="titulo">¿A donde vamos hoy ?</h1>
-    <ion-button [routerLink]="['/viajes']" > Mas viajes </ion-button>
-    <ion-button  (click)="abrirMapa()">
-      <ion-icon slot="start" ios="speedometer" md="speedometer" ></ion-icon>
-      Tellevo
-    </ion-button >
+    <div style="display: flex; justify-content: center;">
+      <ion-button [routerLink]="['/viajes']" > Mas viajes </ion-button>
+      <ion-button  (click)="abrirMapa()">
+        <ion-icon slot="start" ios="speedometer" md="speedometer" ></ion-icon>
+        Tellevo
+      </ion-button >
+    </div>
   </div>
 
-  <div>
+  <div style="display: flex; flex-wrap: wrap;">
     <ion-card class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
@@ -41,6 +43,27 @@
         </div>
       </div>
     </ion-card>
+    <ion-card class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img alt="Silhouette of mountains" src="https://appassets.mvtdev.com/map/188/l/642/595288/1623235.jpg" />
+          <ion-card-header>
+            <ion-card-title>Miguel</ion-card-title>
+            <ion-card-subtitle>Melipilla - Bollenar </ion-card-subtitle>
+          </ion-card-header>
+        </div>
+        <div class="flip-card-back">
+          <ion-card-header>
+            <img alt="Silhouette of mountains" src="https://img.freepik.com/fotos-premium/mono-vestido-traje-negocios-formal_847288-285.jpg?w=2000" />
+          </ion-card-header>
+          <ion-card-content>
+            <p> Hola, me dirijo desde el lider de vicuña mackena hasta metro bellas artes salgo desde casa 17:30</p>
+            <ion-button [routerLink]="['/']" expand="block" color="danger">Solicitar viaje</ion-button>
+          </ion-card-content>
+        </div>
+      </div>
+    </ion-card>
+    
   </div>
 
 
