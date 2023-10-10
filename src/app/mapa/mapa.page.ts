@@ -38,8 +38,12 @@ export class MapaPage implements OnInit {
     this.directionsDisplay = new google.maps.DirectionsRenderer;
     let latLng = new google.maps.LatLng(this.latitude, this.longitude);
     let mapOptions = {
-      center: latLng,
       zoom: 5,
+      zoomControl: false,
+      scaleControl: false,
+      mapTypeComtrol: false,
+      streetViewControl: false,
+      fullscreamControl: false,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.mapElement!.nativeElement, mapOptions);
