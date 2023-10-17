@@ -1,11 +1,11 @@
-<ion-header [translucent]="true">
+<ion-header style="background-color: #0cbccc;">
   <ion-toolbar color="micolor">
     <ion-title slot="start">Home</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div class="arriba"> 
+  <div class="arriba">
     <ion-button > <ion-icon name="grid" ></ion-icon> </ion-button>
     <h2> Bienvenido {{ nombreUsuario }}</h2>
     <ion-button > <ion-icon name="star" ></ion-icon> </ion-button>
@@ -19,6 +19,10 @@
         <ion-icon slot="start" ios="speedometer" md="speedometer" ></ion-icon>
         Tellevo
       </ion-button >
+    </div>
+    <div id="clima">
+      <img [src]=weatherIcon>
+      Actual: {{ weatherTemp.temp }}°C
     </div>
   </div>
 
@@ -63,7 +67,7 @@
         </div>
       </div>
     </ion-card>
-    
+
   </div>
 
 
@@ -74,7 +78,7 @@
         <h3 style="color: white;" >Feria San Joaquín Se Vive 2023: el reencuentro de la Innovación, la industria y el futuro</h3>
         <h5>PUBLICADO EL 1 SEPTIEMBRE, 2023</h5>
       </ion-card-header>
-    
+
       <ion-button fill="clear">Leer mas </ion-button>
     </ion-card> -->
 </ion-content>

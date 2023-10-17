@@ -2,9 +2,11 @@ ion-menu-button {
   color: var(--ion-color-primary);
 }
 
-ion-toolbar{
-  background-color: var(--ion-color-micolor);
+ion-content{
+  --ion-background-color: #107acc;
 }
+
+
 .arriba{
   display: flex;
   justify-content: space-between;
@@ -18,5 +20,5 @@ ion-toolbar{
 .carta{
   border: 5px solid;
   height: 50vh;
-  
+
 }

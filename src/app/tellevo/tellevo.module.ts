@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { TellevoPageRoutingModule } from './tellevo-routing.module';
 
 import { TellevoPage } from './tellevo.page';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    TellevoPageRoutingModule
+    TellevoPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [TellevoPage]
 })

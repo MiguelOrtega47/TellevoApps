@@ -1,48 +1,52 @@
+ion-content{
+  --ion-background-color: #107acc;
+}
+
+
+
 ion-menu-button {
     color: var(--ion-color-primary);
   }
-  
-  ion-toolbar{
-    background-color: var(--ion-color-micolor);
-  }
+
+
   .arriba{
     display: flex;
     justify-content: space-between;
   }
-  
+
   .titulo{
     display: flex;
     justify-content: center;
   }
-  
- 
+
+
   ion-card{
     border-radius: 40px;
     border: 5px solid
   }
   ion-grid{
-    
+
     display: flex;
     flex-direction: column;
   }
-//Carta que gira 
+//Carta que gira
   .flip-card {
     margin: 15px;
     padding: 0;
-    width: 160px;
-    height: 350px;
-  
+    width: 150px;
+    height: 330px;
+
     .flip-card-inner {
       width: 100%;
       height: 100%;
       transform-style: preserve-3d;
       transition: transform 0.5s;
-  
+
       &:hover {
         transform: rotateY(180deg);
       }
     }
-  
+
     .flip-card-front,
     .flip-card-back {
       width: 100%;
@@ -56,8 +60,15 @@ ion-menu-button {
       border: 1px solid #ccc;
       background-color: #fff;
     }
-  
+
     .flip-card-back {
       transform: rotateY(180deg);
     }
+  }
+
+  #clima{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
