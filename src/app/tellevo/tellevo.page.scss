@@ -2,7 +2,13 @@ ion-content{
   --ion-background-color: #107acc;
 }
 
+ion-card-content > p{
+  font-size: .8rem;
+}
 
+ion-card-button{
+  width: 10px;
+}
 
 ion-menu-button {
     color: var(--ion-color-primary);
