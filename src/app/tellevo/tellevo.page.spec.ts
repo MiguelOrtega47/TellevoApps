@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TellevoPage } from './tellevo.page';
+import { TellevoPage } from './TellevoPage';
 
 describe('TellevoPage', () => {
   let component: TellevoPage;

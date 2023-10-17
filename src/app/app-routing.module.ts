@@ -45,7 +45,8 @@ const routes: Routes = [
   },   {
     path: 'mapa',
     loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
-  }
+  },
+
  
 ];
 

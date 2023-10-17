@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-tellevo',
   templateUrl: './tellevo.page.html',
@@ -13,10 +14,8 @@ export class TellevoPage implements OnInit {
 
   constructor(public router: Router, private menu: MenuController) { }
 
-  
-  ngOnInit() {
-    console.log('Nombre de usuario: ', this.nombreUsuario);
-  }
+
+  ngOnInit() {}
 
   abrirMapa() {
     this.router.navigate(["/mapa"]);
