@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.tebi.app',
+  appId: 'io.ionic.starter',
   appName: 'tebi-app',
   webDir: 'www',
   server: {

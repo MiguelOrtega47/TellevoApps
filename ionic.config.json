@@ -1,5 +1,7 @@
 {
-  "name": "ionic-app-base",
-  "integrations": {},
+  "name": "tebi-app",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
