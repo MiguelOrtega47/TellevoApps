@@ -14,12 +14,11 @@ export class AppComponent {
     { title: 'Ingreso de usuario', url: '/inicio', icon: 'home' },
     { title: 'restablecer-contrasena', url: 'restablecer-contrasena', icon: 'lock-closed' },
     { title: 'Registro', url: '/registro', icon: 'person-add' },
-    { title: 'folder', url: '/folder', icon: 'home' },
     { title: 'Servicios', url: '/servicios', icon: 'nutrition' },
     { title: 'viajes', url: '/viajes', icon: 'nutrition' },
     { title: 'registro-ruta', url: '/registro-ruta', icon: 'nutrition' },
   ];
-  
+
   constructor(public router: Router, private menu: MenuController) {}
 
   compartirApp(){

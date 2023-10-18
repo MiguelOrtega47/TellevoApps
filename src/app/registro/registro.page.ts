@@ -21,7 +21,7 @@ export class RegistroPage implements OnInit {
   ngOnInit() {
   }
   async registrar() {
-    var f = this.formularioLogin.value; 
+    var f = this.formularioLogin.value;
 
     if (this.formularioLogin.invalid) {
       const alert = await this.alertController.create({
@@ -41,6 +41,24 @@ export class RegistroPage implements OnInit {
 
       await alert.present();
       return;
+    } else if (f.contrasena.length < 6) {
+      const alert = await this.alertController.create({
+        header: 'Mensaje',
+        message: 'Contraseñas demasiado corta',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+      return;
+    } else if (f.nombre.length < 8) {
+      const alert = await this.alertController.create({
+        header: 'Mensaje',
+        message: 'Nombre demasiado corta',
+        buttons: ['OK']
+      });
+
+      await alert.present();
+      return;
     } else {
       var nombreUsuario = f.nombre;
       var contrasenaUsuario = f.contrasena;
@@ -54,7 +72,7 @@ export class RegistroPage implements OnInit {
         buttons: ['OK']
       });
 
-      await alert.present();      
+      await alert.present();
       this.router.navigate(["/inicio"]);
     }
   }
