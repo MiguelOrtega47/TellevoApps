@@ -2,23 +2,40 @@ ion-content{
   --ion-background-color: #107acc;
 }
 
+ion-card-content > p{
+  font-size: .8rem;
+}
 
+ion-button{
+  padding: 0px 40px;
+}
 
   ion-card{
     border-radius: 40px;
     border: 5px solid
   }
-  ion-grid{
 
+  ion-grid{
     display: flex;
   }
+
+
+  .flip-card-front > img{
+    width: 200px;
+  }
+
+  #pasajeroImagen > img{
+    width: 130px;
+  }
+
+
 //Carta que gira
   .flip-card {
     margin: 15px;
     padding: 0;
-    width: 120px;
-    height: 300px;
-
+    width: 260px;
+    height: 280px;
+}
 
     .flip-card-inner {
       width: 100%;
@@ -48,7 +65,7 @@ ion-content{
     .flip-card-back {
       transform: rotateY(180deg);
     }
-  }
+
 
 .contenedor{
   display: flex;
