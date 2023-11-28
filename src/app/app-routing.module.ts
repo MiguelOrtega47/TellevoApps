@@ -30,11 +30,6 @@ const routes: Routes = [
     loadChildren: () => import('./restablecer-contrasena/restablecer-contrasena.module').then( m => m.RestablecerContrasenaPageModule)
   },
   {
-    path: 'registro-ruta',
-    loadChildren: () => import('./registro-ruta/registro-ruta.module').then( m => m.RegistroRutaPageModule),
-    canActivate: [AutenticadoGuard]
-  },
-  {
     path: 'carga',
     loadChildren: () => import('./carga/carga.module').then( m => m.CargaPageModule)
   },
@@ -44,7 +39,8 @@ const routes: Routes = [
     canActivate: [AutenticadoGuard]
   },   {
     path: 'mapa',
-    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule)
+    loadChildren: () => import('./mapa/mapa.module').then( m => m.MapaPageModule),
+    canActivate: [AutenticadoGuard]
   },
 
  

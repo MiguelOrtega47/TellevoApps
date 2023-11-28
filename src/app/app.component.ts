@@ -16,7 +16,7 @@ export class AppComponent {
     { title: 'Registro', url: '/registro', icon: 'person-add' },
     { title: 'Servicios', url: '/servicios', icon: 'nutrition' },
     { title: 'viajes', url: '/viajes', icon: 'nutrition' },
-    { title: 'registro-ruta', url: '/registro-ruta', icon: 'nutrition' },
+    { title: 'registro-ruta', url: '/mapa', icon: 'nutrition' },
   ];
 
   constructor(public router: Router, private menu: MenuController) {}
